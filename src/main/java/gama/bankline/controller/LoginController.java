@@ -1,5 +1,5 @@
 package gama.bankline.controller;
-
+import org.springframework.web.bind.annotation.RequestBody;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -32,7 +32,7 @@ public class LoginController {
 	private PasswordEncoder encoder;
 	
 	@PostMapping
-	public Sessao logar(LoginDTO login) throws Exception {
+	public Sessao logar(@RequestBody LoginDTO login) throws Exception {
 
 		if (login == null || login.getUsuario().isEmpty() || login.getSenha().isEmpty()) {
 			throw new RuntimeException("Login e senha são requeridos");
