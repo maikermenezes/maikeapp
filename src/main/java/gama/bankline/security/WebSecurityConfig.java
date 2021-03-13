@@ -59,6 +59,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
 		.authorizeRequests()
 		.antMatchers(SWAGGER_WHITELIST).permitAll()
 		.antMatchers("/h2-console/**").permitAll()
+		.antMatchers("/login").permitAll()
 		
 		//BASIC AUTH
 		//.anyRequest().authenticated().and().httpBasic()
